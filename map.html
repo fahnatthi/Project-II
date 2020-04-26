@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19 Update (Live)</title>
+    <link rel="icon" href="images/logo.jpg">
+
+    <link href="https://unpkg.com/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+
+    <!-- Stylesheets -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .mapael .mapTooltip {
+            position: absolute;
+            background-color: #474c4b;
+            moz-opacity: 0.70;
+            opacity: 0.70;
+            filter: alpha(opacity=70);
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            max-width: 200px;
+            display: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!--Page Title-->
+    <section class="page-title text-center" style="background-image:url(images/33.jpg);">
+        <div class="container">
+          <div class="title-text">
+            <h1>CORONAVIRUS UPDATE (LIVE)</h1>
+            <ul class="title-menu clearfix">
+              <li>
+                <a href="index.html">home &nbsp;/</a>
+              </li>
+              <li>
+                <a href="about.html">About &nbsp;/</a>
+              </li>
+              <li>
+                <a href="survey.html">Survey &nbsp;/</a>
+              </li>
+              <li>
+                <a href="country.html">Table &nbsp;/</a>
+              </li>
+              <li>
+                <a href="chart.html">Chart &nbsp;/</a>
+              </li>
+              <li>COVID-19 MAP LIVE</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--End Page Title-->
+
+    <div class="container-fluid">
+        <div class="cases d-flex flex-row">
+            <div class="map col-8"></div>
+            <div class="areaLegend col-4"></div>
+            <div class="plotLegend" style="margin-left:-430px; margin-top: 250px;"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-mousewheel@3.1.13/jquery.mousewheel.min.js"></script>
+    <!-- github.com/neveldo/jQuery-Mapael -->
+    <script src="asset/mapael/jquery.mapael.js"></script>
+    <script src="asset/mapael/maps/world_countries_mercator.min.js"></script>
+    <script src="asset/dataset.js"></script>
+    <script>
+        $(".cases").mapael({
+            map: {
+                name : "world_countries_mercator",
+			    defaultArea: {
+				    attrs : {
+					    stroke : "#fff", 
+					    "stroke-width" : 1
+				    }
+			    }
+            },
+		    legend: {
+			    area: {
+				    display : true,
+				    title :"Territory of total deaths as of 1 April 2020", 
+				    slices : deathLegendAreaColors
+			    },
+			    plot: {
+				    display : true,
+				    title :"Region of total deaths as of 1 April 2020", 
+				    slices : deathLegendPlotColors
+			    } 
+		    },
+		    plots : deathCityPlots,
+		    areas: deathCountryAreas
+        });
+    </script>
+
+    <!--footer-main-->
+    <footer class="footer-main">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="about-widget">
+                            <div class="footer-logo">
+                            </div>
+                            <p>College of Computing  ||  Software Engineering</p>
+                            <ul class="location-link">
+                                <li class="item">
+                                    <i class="fa fa-map-marker"></i>
+                                    <p>Prince of Songkla University, Phuket Campus</p>
+                                </li>
+                                <li class="item">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    <a href="#">
+                                        <p>s6130613039@psu.phuket.ac.th</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <p>(88017) +123 4567</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container clearfix">
+                <div class="copyright-text">
+                    <p> Coronavirus COVID-19 (Live)
+                    </p>
+                </div>
+                <ul class="footer-bottom-link">
+                    <li>
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                      <a href="about.html">About</a>
+                    </li>
+                    <li>
+                      <a href="survey.html">Survey</a>
+                    </li>
+                
+            </div>
+        </div>
+        
+    </footer>
+    <!--End footer-main-->
+</body>
+</html>
+s
